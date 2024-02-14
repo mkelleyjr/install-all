@@ -1,0 +1,16 @@
+:: Michael L. Kelley Jr.
+:: May 10, 2023
+:: Place batch file in a folder with .exe files to install 
+
+@ECHO OFF
+:: set batch file script path as default working path
+CD /d %~dp0
+
+ECHO Installing everything from current folder...
+
+FOR /r "." %%a in (*.exe) do "%%~fa" -s
+
+ECHO Installation Complete.
+
+TIMEOUT 120
+
